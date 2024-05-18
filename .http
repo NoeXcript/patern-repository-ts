@@ -1,0 +1,28 @@
+GET http://localhost:3000
+
+###
+POST http://localhost:3000/api/v1/users
+content-type: application/json
+
+{
+    "name": "Devx.Js",
+    "email": "devx.js@gmail"
+}
+
+###
+GET http://localhost:3000/api/v1/users
+
+###
+GET http://localhost:3000/api/v1/users/1
+
+###
+DELETE  http://localhost:3000/api/v1/users/1
+
+###
+PUT http://localhost:3000/api/v1/users/2
+content-type: application/json
+
+{
+    "name": "dex.js.dev",
+    "email": "js@html.com"
+}
