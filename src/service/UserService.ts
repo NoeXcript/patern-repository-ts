@@ -6,6 +6,7 @@ export class UserService {
     constructor(private userRepository: IUserRepository) { }
     async createUser(name: string, email: string): Promise<User> {
         const user: User = { id: 0, name, email }
+   
         return await this.userRepository.store(user)
     }
 

@@ -15,9 +15,14 @@ const userService = new UserService(userRepository)
 
 
 router.post('/users', async (req: Request, res: Response) => {
-    const { name, email } = req.body
+    const { name, email }: { name: string, email: string } = req.body
+
+
     const user = await userService.createUser(name, email)
-    return user;
+    res.status(201).json({
+        object: user,
+        message: 'Created with sucess'
+    })
 })
 
 router.get('/users/:id', async (req: Request, res: Response) => {

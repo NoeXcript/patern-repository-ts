@@ -9,10 +9,13 @@ export class InMemoryUserRepository implements IUserRepository {
 
 
     public async store(user: User): Promise<User> {
-        user.id = this.nextId++
-        this.users.push(user)
 
-        return user
+        user.id = this.nextId++
+
+        
+        this.users.push(user)
+     
+        return  user
     }
 
     public async show(id: number): Promise<User | null> {
